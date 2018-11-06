@@ -1,12 +1,41 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">  
+
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
+    <title>Horizontal</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    
   </head>
-  <body class="a-body ">
+
+  <body class="a-body aframe-inspector-opened">
     <a-scene>
+
+      <a-assets>
+        <a-mixin id="checkpoint"></a-mixin>
+        <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
+      </a-assets>
       <a-gltf-model src="#house" gltf-model="house/scene.gltf" id="house" scale="0.5 0.5 0.5"></a-gltf-model>
-      <a-entity position="50.10153645118714 5 -16.942580408423808" rotation="0.562 119.99999999999999 4.9698561047383646e-17" id="camera">
-  <a-camera camera="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="" position="4.056719457764798 0 -30.777948642936813" rotation="-11.000789666511768 330.4820562314602 0"></a-camera></a-entity>
+
+         <a-entity id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+        <a-entity camera
+                  position="0 5 0"
+                  look-controls="pointerLockEnabled: true">
+          <a-entity cursor
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+                    material="color: #CCC; shader: flat;"></a-entity>
+        </a-entity>
+      </a-entity>
       
+
+      <a-entity position="1 0 1" rotation="0 0 0" scale="1 1 1" visible="true">
+        <a-cylinder checkpoint="offset:0 0 0" radius="1" height="0.1" position="0 3 -5.2" color="#39BB82" rotation="0 0 0" scale="1 1 1" visible="true" material="color:#39BB82" geometry="primitive:cylinder;radius:1;height:0.1"></a-cylinder>
+        <a-cylinder checkpoint="offset:0 0 0" radius="1" height="0.1" position="3 3 0" color="#39BB82" rotation="0 0 0" scale="1 1 1" visible="true" material="color:#39BB82" geometry="primitive:cylinder;radius:1;height:0.1"></a-cylinder>
+        <a-cylinder checkpoint="offset:0 0 0" radius="1" height="0.1" position="-3 3 0" color="#39BB82" rotation="0 0 0" scale="1 1 1" visible="true" material="color:#39BB82" geometry="primitive:cylinder;radius:1;height:0.1"></a-cylinder>
+      </a-entity>
+
       
       <a-sky color="#ECECEC" material="" geometry=""></a-sky>
     </a-scene>
