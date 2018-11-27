@@ -63673,6 +63673,7 @@ module.exports = MouseKeyboardVRDisplay;
 
 },{"./base.js":47,"./math-util.js":58,"./util.js":67}],60:[function(_dereq_,module,exports){
 (function (global){
+<<<<<<< HEAD
 // This is the entry point if requiring/importing via node, or
 // a build tool that uses package.json entry (like browserify, webpack).
 // If running in node with a window mock available, globalize its members
@@ -63683,6 +63684,18 @@ if (typeof global !== 'undefined' && global.window) {
 }
 
 _dereq_('./main');
+=======
+// This is the entry point if requiring/importing via node, or
+// a build tool that uses package.json entry (like browserify, webpack).
+// If running in node with a window mock available, globalize its members
+// if needed. Otherwise, just continue to `./main`
+if (typeof global !== 'undefined' && global.window) {
+  global.document = global.window.document;
+  global.navigator = global.window.navigator;
+}
+
+_dereq_('./main');
+>>>>>>> 84b4f68f01e75744344dd7e70e39c8f130cabd7d
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
