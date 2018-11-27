@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">  
+<html xmlns="http://www.w3.org/1999/xhtml">
 
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
     <title>Horizontal</title>
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    
+    <!-- <script src="aframe-master.js"></script>
+    <script src="aframe-xr.js"></script> -->
+    <script src="aframe-extras.js"></script>
+
   </head>
 
   <body class="a-body aframe-inspector-opened">
@@ -18,7 +21,7 @@
       </a-assets>
       <a-gltf-model src="#house" gltf-model="house/scene.gltf" id="house" scale="0.5 0.5 0.5"></a-gltf-model>
 
-         <a-entity id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+         <a-entity id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate" position="10 0 0">
         <a-entity camera
                   position="0 5 0"
                   look-controls="pointerLockEnabled: true">
@@ -28,7 +31,7 @@
                     material="color: #CCC; shader: flat;"></a-entity>
         </a-entity>
       </a-entity>
-      
+
 
       <a-entity position="1 0 1" rotation="0 0 0" scale="1 1 1" visible="true">
         <a-cylinder checkpoint="offset:0 0 0" radius="1" height="0.1" position="0 3 -5.2" color="#39BB82" rotation="0 0 0" scale="1 1 1" visible="true" material="color:#39BB82" geometry="primitive:cylinder;radius:1;height:0.1"></a-cylinder>
@@ -36,8 +39,8 @@
         <a-cylinder checkpoint="offset:0 0 0" radius="1" height="0.1" position="-3 3 0" color="#39BB82" rotation="0 0 0" scale="1 1 1" visible="true" material="color:#39BB82" geometry="primitive:cylinder;radius:1;height:0.1"></a-cylinder>
       </a-entity>
 
-      
+
       <a-sky color="#ECECEC" material="" geometry=""></a-sky>
     </a-scene>
-  
+
 <textarea style="font-size: 12pt; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 0px;" readonly="readonly"></textarea></body></html>
